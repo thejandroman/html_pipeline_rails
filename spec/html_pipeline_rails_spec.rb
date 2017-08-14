@@ -17,5 +17,13 @@ describe HtmlPipelineRails do
         expect(pipeline.filters).to eq([HTML::Pipeline::MarkdownFilter])
       end
     end
+
+    it "allows for changing the file extensions" do
+      HtmlPipelineRails.config do |c|
+        c.file_extensions = [:html]
+        exts = c.file_extensions
+        expect(exts[0]).to eq(:html)
+      end
+    end
   end
 end

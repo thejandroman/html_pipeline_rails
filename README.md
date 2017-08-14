@@ -68,6 +68,17 @@ HtmlPipelineRails.config do |c|
 end
 ```
 
+### Changing file extensions
+
+By default supported file extensions include `.md`, `.mdown`, and `.markdown`. To change these defaults:
+
+```ruby
+# config/initializers/html_pipeline.rb
+HtmlPipelineRails.config do |c|
+  c.file_extensions = [:html]
+end
+```
+
 ## Contributing
 
 Run tests with:

@@ -13,4 +13,7 @@ module HtmlPipelineRails
   end
 end
 
-ActionView::Template.register_template_handler(:md, :mdown, :markdown, HtmlPipelineRails::Handler.new)
+ActionView::Template.register_template_handler(
+  *HtmlPipelineRails.configuration.file_extensions,
+  HtmlPipelineRails::Handler.new
+)
